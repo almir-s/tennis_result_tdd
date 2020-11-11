@@ -60,51 +60,6 @@ TEST_F(ResultKeeperTest, ApplyPointsInsideOneGame) {
               std::string("0 | 0 | 40 \n") + std::string("0 | 0 | 40 "));
 }
 
-// TEST_F(ResultKeeperTest, ApplyOnePointToBothPlayers) {
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   ASSERT_THAT(resultKeeper.getResult(),
-//               std::string("0 | 0 | 15 \n") + std::string("0 | 0 | 15 "));
-// }
-
-// TEST_F(ResultKeeperTest, ApplyTwoPointsToFirstPlayerAndOnePointToSecond) {
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   ASSERT_THAT(resultKeeper.getResult(),
-//               std::string("0 | 0 | 30 \n") + std::string("0 | 0 | 15 "));
-// }
-
-// TEST_F(ResultKeeperTest, ApplyTwoPointsToBothPlayers) {
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   ASSERT_THAT(resultKeeper.getResult(),
-//               std::string("0 | 0 | 30 \n") + std::string("0 | 0 | 30 "));
-// }
-
-// TEST_F(ResultKeeperTest, ApplyThreePointsToFirstPlayerAndTwoToSecondPlayer) {
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   ASSERT_THAT(resultKeeper.getResult(),
-//               std::string("0 | 0 | 40 \n") + std::string("0 | 0 | 30 "));
-// }
-
-// TEST_F(ResultKeeperTest, ApplyThreePointsToBothPlayes) {
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   resultKeeper.firstPlayerPoint();
-//   resultKeeper.secondPlayerPoint();
-//   ASSERT_THAT(resultKeeper.getResult(),
-//               std::string("0 | 0 | 40 \n") + std::string("0 | 0 | 40 "));
-// }
-
 TEST_F(ResultKeeperTestWinningGamePoint, ApplyFourPointsToFirstPlayer) {
   addFourPointsToFirstPlayer();
   ASSERT_THAT(resultKeeper.getResult(),
@@ -151,6 +106,3 @@ TEST_F(ResultKeeperTestWinningGamePoint,
   ASSERT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 0 \n") + std::string("0 | 1 | 0 "));
 }
-
-
-
