@@ -1,6 +1,7 @@
+build/*
+build/
 build
 compile_commands.json
 subprojects/*
 !subprojects/*.wrap
-
 .clangd

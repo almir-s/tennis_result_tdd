@@ -19,17 +19,7 @@ class ResultKeeper {
 
   public:
   ResultKeeper(){};
-
-  // ResultKeeper(std::string firstPlayerPoints, std::string secondPlayerPoints,
-  //              int firstPlayerGamePoints, int secondPlayerGamePoints,
-  //              int firstPlayerSetPoints, int secondPlayerSetPoints)
-  //     : firstPlayerPoints(firstPlayerPoints),
-  //       secondPlayerPoints(secondPlayerPoints),
-  //       firstPlayerGamePoints(firstPlayerGamePoints),
-  //       secondPlayerGamePoints(secondPlayerGamePoints),
-  //       firstPlayerSetPoints(firstPlayerSetPoints),
-  //       secondPlayerSetPoints(secondPlayerSetPoints) {}
-
+  
   std::string getResult() {
     return std::to_string(firstPlayerSetPoints) + " | " +
            std::to_string(firstPlayerGamePoints) + " | " + firstPlayerPoints +
