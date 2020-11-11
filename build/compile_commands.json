@@ -1,0 +1,32 @@
+[
+  {
+    "directory": "/home/almir/tennis_result_tdd/build",
+    "command": "c++ -Itest/9f86d08@@TennisResultTdd@exe -Itest -I../test -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++14 -g -pthread -isystem../subprojects/googletest-release-1.8.0/googlemock -isystemsubprojects/googletest-release-1.8.0/googlemock -isystem../subprojects/googletest-release-1.8.0/googlemock/include -isystem../subprojects/googletest-release-1.8.0/googletest -isystemsubprojects/googletest-release-1.8.0/googletest -isystem../subprojects/googletest-release-1.8.0/googletest/include -MD -MQ 'test/9f86d08@@TennisResultTdd@exe/gtest_main.cpp.o' -MF 'test/9f86d08@@TennisResultTdd@exe/gtest_main.cpp.o.d' -o 'test/9f86d08@@TennisResultTdd@exe/gtest_main.cpp.o' -c ../test/gtest_main.cpp",
+    "file": "../test/gtest_main.cpp",
+    "output": "test/9f86d08@@TennisResultTdd@exe/gtest_main.cpp.o"
+  },
+  {
+    "directory": "/home/almir/tennis_result_tdd/build",
+    "command": "c++ -Itest/9f86d08@@TennisResultTdd@exe -Itest -I../test -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++14 -g -pthread -isystem../subprojects/googletest-release-1.8.0/googlemock -isystemsubprojects/googletest-release-1.8.0/googlemock -isystem../subprojects/googletest-release-1.8.0/googlemock/include -isystem../subprojects/googletest-release-1.8.0/googletest -isystemsubprojects/googletest-release-1.8.0/googletest -isystem../subprojects/googletest-release-1.8.0/googletest/include -MD -MQ 'test/9f86d08@@TennisResultTdd@exe/resultKeeperTest.cpp.o' -MF 'test/9f86d08@@TennisResultTdd@exe/resultKeeperTest.cpp.o.d' -o 'test/9f86d08@@TennisResultTdd@exe/resultKeeperTest.cpp.o' -c ../test/resultKeeperTest.cpp",
+    "file": "../test/resultKeeperTest.cpp",
+    "output": "test/9f86d08@@TennisResultTdd@exe/resultKeeperTest.cpp.o"
+  },
+  {
+    "directory": "/home/almir/tennis_result_tdd/build",
+    "command": "c++ -Itest/9f86d08@@TennisResultTdd@exe -Itest -I../test -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++14 -g -pthread -isystem../subprojects/googletest-release-1.8.0/googlemock -isystemsubprojects/googletest-release-1.8.0/googlemock -isystem../subprojects/googletest-release-1.8.0/googlemock/include -isystem../subprojects/googletest-release-1.8.0/googletest -isystemsubprojects/googletest-release-1.8.0/googletest -isystem../subprojects/googletest-release-1.8.0/googletest/include -MD -MQ 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googletest_src_gtest-all.cc.o' -MF 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googletest_src_gtest-all.cc.o.d' -o 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googletest_src_gtest-all.cc.o' -c ../subprojects/googletest-release-1.8.0/googletest/src/gtest-all.cc",
+    "file": "../subprojects/googletest-release-1.8.0/googletest/src/gtest-all.cc",
+    "output": "test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googletest_src_gtest-all.cc.o"
+  },
+  {
+    "directory": "/home/almir/tennis_result_tdd/build",
+    "command": "c++ -Itest/9f86d08@@TennisResultTdd@exe -Itest -I../test -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++14 -g -pthread -isystem../subprojects/googletest-release-1.8.0/googlemock -isystemsubprojects/googletest-release-1.8.0/googlemock -isystem../subprojects/googletest-release-1.8.0/googlemock/include -isystem../subprojects/googletest-release-1.8.0/googletest -isystemsubprojects/googletest-release-1.8.0/googletest -isystem../subprojects/googletest-release-1.8.0/googletest/include -MD -MQ 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googlemock_src_gmock-all.cc.o' -MF 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googlemock_src_gmock-all.cc.o.d' -o 'test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googlemock_src_gmock-all.cc.o' -c ../subprojects/googletest-release-1.8.0/googlemock/src/gmock-all.cc",
+    "file": "../subprojects/googletest-release-1.8.0/googlemock/src/gmock-all.cc",
+    "output": "test/9f86d08@@TennisResultTdd@exe/.._subprojects_googletest-release-1.8.0_googlemock_src_gmock-all.cc.o"
+  },
+  {
+    "directory": "/home/almir/tennis_result_tdd/build",
+    "command": "c++ -Imain@exe -I. -I.. -I../include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -std=c++14 -g -pthread -MD -MQ 'main@exe/src_main.cpp.o' -MF 'main@exe/src_main.cpp.o.d' -o 'main@exe/src_main.cpp.o' -c ../src/main.cpp",
+    "file": "../src/main.cpp",
+    "output": "main@exe/src_main.cpp.o"
+  }
+]
