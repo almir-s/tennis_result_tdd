@@ -46,15 +46,15 @@ TEST_F(ResultKeeperTest, ApplyPointsInsideOneGame) {
   resultKeeper.firstPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 30 \n") + std::string("0 | 0 | 15 "));
-  
+
   resultKeeper.secondPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 30 \n") + std::string("0 | 0 | 30 "));
-  
+
   resultKeeper.firstPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 40 \n") + std::string("0 | 0 | 30 "));
-  
+
   resultKeeper.secondPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 40 \n") + std::string("0 | 0 | 40 "));
@@ -111,31 +111,46 @@ TEST_F(ResultKeeperTestWinningGamePoint, ApplyFourPointsToFirstPlayer) {
               std::string("0 | 1 | 0 \n") + std::string("0 | 0 | 0 "));
 }
 
-TEST_F(ResultKeeperTestWinningGamePoint, ApplyOneGamePointToFirstPlayerAndOnePointToSecondPlayer) {
-  resultKeeper.firstPlayerPoint();
-  resultKeeper.firstPlayerPoint();
-  resultKeeper.firstPlayerPoint();
-
+TEST_F(ResultKeeperTestWinningGamePoint,
+       ApplyOneGamePointToFirstPlayerAndOnePointToSecondPlayer) {
   resultKeeper.secondPlayerPoint();
-  resultKeeper.firstPlayerPoint();
+  addFourPointsToFirstPlayer();
   ASSERT_THAT(resultKeeper.getResult(),
               std::string("0 | 1 | 0 \n") + std::string("0 | 0 | 0 "));
 }
 
-TEST_F(ResultKeeperTestWinningGamePoint, ApplyOneGamePointToFirstPlayerAndTwoPointToSecondPlayer) {
-  resultKeeper.firstPlayerPoint();
-  resultKeeper.firstPlayerPoint();
-  resultKeeper.firstPlayerPoint();
+TEST_F(ResultKeeperTestWinningGamePoint,
+       ApplyOneGamePointToFirstPlayerAndTwoPointToSecondPlayer) {
+  resultKeeper.secondPlayerPoint();
+  resultKeeper.secondPlayerPoint();
 
-  resultKeeper.secondPlayerPoint();
-  resultKeeper.secondPlayerPoint();
-  resultKeeper.firstPlayerPoint();
+  addFourPointsToFirstPlayer();
   ASSERT_THAT(resultKeeper.getResult(),
               std::string("0 | 1 | 0 \n") + std::string("0 | 0 | 0 "));
 }
 
 TEST_F(ResultKeeperTestWinningGamePoint, ApplyFourPointsToSecondPlayer) {
- addFourPointsToSecondPlayer(); 
+  addFourPointsToSecondPlayer();
   ASSERT_THAT(resultKeeper.getResult(),
               std::string("0 | 0 | 0 \n") + std::string("0 | 1 | 0 "));
 }
+
+TEST_F(ResultKeeperTestWinningGamePoint,
+       ApplyFourPointsToSecondPlayerAndOnePointToFirstPlayer) {
+  resultKeeper.firstPlayerPoint();
+  addFourPointsToSecondPlayer();
+  ASSERT_THAT(resultKeeper.getResult(),
+              std::string("0 | 0 | 0 \n") + std::string("0 | 1 | 0 "));
+}
+
+TEST_F(ResultKeeperTestWinningGamePoint,
+       ApplyFourPointsToSecondPlayerAndTwoPointsToFirstPlayer) {
+  resultKeeper.firstPlayerPoint();
+  resultKeeper.firstPlayerPoint();
+  addFourPointsToSecondPlayer();
+  ASSERT_THAT(resultKeeper.getResult(),
+              std::string("0 | 0 | 0 \n") + std::string("0 | 1 | 0 "));
+}
+
+
+

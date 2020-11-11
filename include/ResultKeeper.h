@@ -19,7 +19,7 @@ class ResultKeeper {
 
   public:
   ResultKeeper(){};
-  
+
   std::string getResult() {
     return std::to_string(firstPlayerSetPoints) + " | " +
            std::to_string(firstPlayerGamePoints) + " | " + firstPlayerPoints +
@@ -31,10 +31,14 @@ class ResultKeeper {
   }
 
   void firstPlayerPoint() {
-    if(firstPlayerPoints == "40") {
+    if ((firstPlayerPoints == "40" && (secondPlayerPoints != "40" && secondPlayerPoints != "A")) ||
+        (firstPlayerPoints == "A" && secondPlayerPoints == "40")) {
       firstPlayerPoints = "0";
       secondPlayerPoints = "0";
       firstPlayerGamePoints++;
+      return;
+    } else if(firstPlayerPoints == "40" && secondPlayerPoints == "A") {
+      secondPlayerPoints = "40";
       return;
     } 
 
@@ -42,6 +46,16 @@ class ResultKeeper {
   }
 
   void secondPlayerPoint() {
+    if ((secondPlayerPoints == "40" && (firstPlayerPoints != "40" && firstPlayerPoints != "A")) ||
+        (secondPlayerPoints == "A" && firstPlayerPoints == "40")) {
+      secondPlayerGamePoints++;
+      secondPlayerPoints = "0";
+      firstPlayerPoints = "0";
+      return;
+    } else if(secondPlayerPoints == "40" && firstPlayerPoints == "A") {
+      firstPlayerPoints = "40";
+      return;
+    }
     secondPlayerPoints = nextPoint[secondPlayerPoints];
   }
 };
