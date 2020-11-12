@@ -31,28 +31,53 @@ class ResultKeeper {
   }
 
   void firstPlayerPoint() {
-    if ((firstPlayerPoints == "40" && (secondPlayerPoints != "40" && secondPlayerPoints != "A")) ||
+    if ((firstPlayerPoints == "40" &&
+         (secondPlayerPoints != "40" && secondPlayerPoints != "A")) ||
         (firstPlayerPoints == "A" && secondPlayerPoints == "40")) {
       firstPlayerPoints = "0";
       secondPlayerPoints = "0";
+
+      if ((firstPlayerGamePoints == 5 && secondPlayerGamePoints < 5) ||
+          (firstPlayerGamePoints > 5 &&
+           firstPlayerGamePoints > secondPlayerGamePoints)) {
+        firstPlayerSetPoints++;
+        firstPlayerGamePoints = 0;
+        secondPlayerGamePoints = 0;
+        return;
+      } else if (firstPlayerGamePoints == 5 && secondPlayerGamePoints >= 5) {
+        firstPlayerGamePoints++;
+        return;
+      }
       firstPlayerGamePoints++;
       return;
-    } else if(firstPlayerPoints == "40" && secondPlayerPoints == "A") {
+    } else if (firstPlayerPoints == "40" && secondPlayerPoints == "A") {
       secondPlayerPoints = "40";
       return;
-    } 
-
+    }
     firstPlayerPoints = nextPoint[firstPlayerPoints];
   }
 
   void secondPlayerPoint() {
-    if ((secondPlayerPoints == "40" && (firstPlayerPoints != "40" && firstPlayerPoints != "A")) ||
+    if ((secondPlayerPoints == "40" &&
+         (firstPlayerPoints != "40" && firstPlayerPoints != "A")) ||
         (secondPlayerPoints == "A" && firstPlayerPoints == "40")) {
-      secondPlayerGamePoints++;
       secondPlayerPoints = "0";
       firstPlayerPoints = "0";
+
+      if (secondPlayerGamePoints == 5 && firstPlayerGamePoints >= 5) {
+        secondPlayerGamePoints++;
+        return;
+      } else if ((secondPlayerGamePoints == 5 && firstPlayerGamePoints < 5) ||
+                 (secondPlayerGamePoints > 5 &&
+                  secondPlayerGamePoints > firstPlayerGamePoints)) {
+        secondPlayerSetPoints++;
+        secondPlayerGamePoints = 0;
+        firstPlayerGamePoints = 0;
+        return;
+      }
+      secondPlayerGamePoints++;
       return;
-    } else if(secondPlayerPoints == "40" && firstPlayerPoints == "A") {
+    } else if (secondPlayerPoints == "40" && firstPlayerPoints == "A") {
       firstPlayerPoints = "40";
       return;
     }
