@@ -61,11 +61,10 @@ class ResultKeeperWinningGamePointFromAdvantage : public Test {
   }
 };
 
-class ResultKeeperWinningGamePointsTest : public ResultKeeperWinningGamePointFromAdvantage {
+class ResultKeeperWinningGamePointsTest
+    : public ResultKeeperWinningGamePointFromAdvantage {
   public:
-
-  void SetUp() override {
-  }
+  void SetUp() override {}
 };
 
 TEST_F(ResultKeeperWinningGamePointFromAdvantage, FirstPlayerAdventage) {
@@ -303,11 +302,11 @@ TEST_F(ResultKeeperWinningGamePointsTest, PlayersWinSetPoints) {
   addSetPointToSecondPlayer();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("1 | 0 | 0 \n") + std::string("1 | 0 | 0 "));
-  
+
   addSetPointToSecondPlayer();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("1 | 0 | 0 \n") + std::string("2 | 0 | 0 "));
-  
+
   addSetPointToFirstPlayer();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("2 | 0 | 0 \n") + std::string("2 | 0 | 0 "));
@@ -315,13 +314,36 @@ TEST_F(ResultKeeperWinningGamePointsTest, PlayersWinSetPoints) {
   resultKeeper.firstPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("2 | 0 | 15 \n") + std::string("2 | 0 | 0 "));
-  
+
   resultKeeper.firstPlayerPoint();
   EXPECT_THAT(resultKeeper.getResult(),
               std::string("2 | 0 | 30 \n") + std::string("2 | 0 | 0 "));
+}
+
+TEST_F(ResultKeeperWinningGamePointsTest, FirstPlayerWinsTheMatch) {
+  addSetPointToFirstPlayer();
+  addSetPointToFirstPlayer();
+  EXPECT_THAT(resultKeeper.getResult(),
+              std::string("2 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
+
+  addSetPointToFirstPlayer();
+  EXPECT_THAT(resultKeeper.getResult(),
+              std::string("3 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
+
+  resultKeeper.firstPlayerPoint();
+  EXPECT_THAT(resultKeeper.getResult(),
+              std::string("3 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
+
+  resultKeeper.secondPlayerPoint();
+  EXPECT_THAT(resultKeeper.getResult(),
+              std::string("3 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
 
   addFiveGamePointsToSecondPlayer();
   EXPECT_THAT(resultKeeper.getResult(),
-              std::string("2 | 0 | 0 \n") + std::string("2 | 5 | 0 "));
+              std::string("3 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
+
+  addSetPointToFirstPlayer();
+  EXPECT_THAT(resultKeeper.getResult(),
+              std::string("3 | 0 | 0 \n") + std::string("0 | 0 | 0 "));
 }
 

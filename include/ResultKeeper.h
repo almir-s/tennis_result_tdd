@@ -31,6 +31,8 @@ class ResultKeeper {
   }
 
   void firstPlayerPoint() {
+    if(firstPlayerSetPoints == 3  || secondPlayerSetPoints == 3) return;
+
     if ((firstPlayerPoints == "40" &&
          (secondPlayerPoints != "40" && secondPlayerPoints != "A")) ||
         (firstPlayerPoints == "A" && secondPlayerPoints == "40")) {
@@ -58,6 +60,7 @@ class ResultKeeper {
   }
 
   void secondPlayerPoint() {
+    if(firstPlayerSetPoints == 3  || secondPlayerSetPoints == 3) return;
     if ((secondPlayerPoints == "40" &&
          (firstPlayerPoints != "40" && firstPlayerPoints != "A")) ||
         (secondPlayerPoints == "A" && firstPlayerPoints == "40")) {
