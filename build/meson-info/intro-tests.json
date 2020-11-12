@@ -1,1 +1,0 @@
-[{"cmd": ["/home/almir/tennis_result_tdd/build/test/TennisResultTdd"], "env": {}, "name": "Tennis result TDD", "workdir": null, "timeout": 30, "suite": ["tennis_result_tdd"], "is_parallel": true, "priority": 0, "protocol": "exitcode"}]
