@@ -1,4 +1,4 @@
-gtest_srcs= files(['gtest_main.cpp', 'resultKeeperTest.cpp', 'resultKeeperGamePointsTest.cpp'])
+gtest_srcs= files(['gtest_main.cpp', 'result_keeper_test.cpp', 'result_keeper_game_points_test.cpp'])
 
 
 gtest_dep = gtest_sp.get_variable('gtest_dep')
